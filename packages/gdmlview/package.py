@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack.package import *
 
 
 class Gdmlview(CMakePackage):
@@ -18,4 +18,5 @@ class Gdmlview(CMakePackage):
     version('main', branch='main', preferred=True)
     version('0.4', sha256='343ce7652418317e7e22d9edf8a99f90d0f65fb564da6e601399070b1d59a3a0')
 
+    depends_on('boost +program_options')
     depends_on('geant4 +opengl')
